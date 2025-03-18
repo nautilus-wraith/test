@@ -10,9 +10,9 @@ on:
       SEMGREP_APP_TOKEN:
         required: true
   push:
-    branches: [ $default-branch ]
+    branches: [ main ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ main ]
 
 jobs:
   securesdlc-visibility-check:
