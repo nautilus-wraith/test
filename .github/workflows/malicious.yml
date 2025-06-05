@@ -1,4 +1,4 @@
-name: SecureSDLC SAST
+name: SecureSDLC SAST Malicious
 run-name: "[SecureSDLC SAST] Ref:${{ github.ref_name }} Event:${{ github.event_name }}"
 
 on:
