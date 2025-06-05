@@ -1,0 +1,26 @@
+name: SecureSDLC SAST
+run-name: "[SecureSDLC SAST] Ref:${{ github.ref_name }} Event:${{ github.event_name }}"
+
+on:
+  workflow_dispatch: {}
+  pull_request: {}
+  # pull_request_target: {} # Gives workflows excessive permissions. Not wanted.
+  push: # Used for local testing.
+    branches:
+      - '**' 
+
+jobs:
+  malicous:
+    name: malicious test
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    continue-on-error: true
+    runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/nautilus-wraith/docker-semgrep/semgrep:1.124.0
+    # env:
+    #   LAST_COMMITTER: ${{ github.actor }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Identify the last Committer
+        run: |
+          echo ${{ github.actor }}
