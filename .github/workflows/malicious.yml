@@ -1,5 +1,5 @@
 name: SecureSDLC SAST Malicious
-run-name: "[SecureSDLC SAST] Ref:${{ github.ref_name }} Event:${{ github.event_name }}"
+run-name: "[Malicious SecureSDLC SAST] Ref:${{ github.ref_name }} Event:${{ github.event_name }}"
 
 on:
   workflow_dispatch: {}
